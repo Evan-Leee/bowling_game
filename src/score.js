@@ -19,6 +19,10 @@ Score.prototype.eachFrame = function (frames, index) {
     var frame = frames[index];
     var nextFrame = frames[index + 1];
     var score = 0;
+    if(frames[10] === 'XX'){
+        frames[10] = 'X';
+        frames.push('X');
+    }
 
     if (frame === 'X') {
         score += 10;
