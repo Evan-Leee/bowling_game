@@ -18,6 +18,7 @@ Score.prototype.eachFrame = function (frames, index) {
 
     var frame = frames[index];
     var nextFrame = frames[index + 1];
+    var thirdFrame = frames[index + 2];
     var score = 0;
     if(frames[10] === 'XX'){
         frames[10] = 'X';
@@ -28,10 +29,10 @@ Score.prototype.eachFrame = function (frames, index) {
         score += 10;
         if (nextFrame === 'X') {
             score += 10;
-            if (frames[index + 2] === 'X') {
+            if (thirdFrame === 'X') {
                 score += 10;
-            } else if (frames[index + 2][0] !== '-') {
-                score += frames[index + 2][0] - 0;
+            } else if (thirdFrame[0] !== '-') {
+                score += thirdFrame[0] - 0;
             }
         } else if (nextFrame.indexOf('/') !== -1) {
             score += 10;
