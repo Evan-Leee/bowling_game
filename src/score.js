@@ -16,14 +16,15 @@ Score.prototype.eachGame = function (input) {
 
 Score.prototype.eachFrame = function (frames, index) {
 
+    if (frames[frames.length - 1] === 'XX') {
+        frames[frames.length - 1] = 'X';
+        frames.push('X');
+    }
+
     var frame = frames[index];
     var nextFrame = frames[index + 1];
     var thirdFrame = frames[index + 2];
     var score = 0;
-    if(frames[10] === 'XX'){
-        frames[10] = 'X';
-        frames.push('X');
-    }
 
     if (frame === 'X') {
         score += 10;
@@ -51,7 +52,7 @@ Score.prototype.eachFrame = function (frames, index) {
         }
     } else if (frame.indexOf('-') !== -1) {
         score += (frame[0] === '-') ? frame[1] - 0 : frame[0] - 0;
-    }else{
+    } else {
         score += nextFrame[0] - 0;
         score += nextFrame[1] - 0;
     }
