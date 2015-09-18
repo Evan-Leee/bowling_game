@@ -1,6 +1,6 @@
 'use strict';
 
-var Score = require('./score');
+var Score = require('./src/score');
 
 var score = new Score();
 
