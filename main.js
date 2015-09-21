@@ -1,11 +1,11 @@
 'use strict';
 
-var Score = require('./src/score');
+var Calculator = require('./src/calculator');
 
-var score = new Score();
+var calculator = new Calculator();
 
 var input = 'X|X|X|X|X|X|X|X|X|X||XX';
 
-var totalScore = score.eachGame(input);
+var totalScore = calculator.eachGame(input);
 
 console.log(totalScore);
